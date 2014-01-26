@@ -5,7 +5,7 @@ The premise of this POC was to setup a Visualforce page on the sidebar and as a 
 There are plenty of inefficiences and lack of error handling in the CometD usage and AngularJS implementation, but it is stubbed out enough to show the possibilities.
 
 ![Mobile Case Stream](http://mwelburn.github.com/Salesforce-Case-Streaming-API/images/mobile-case-stream.png)
-![Desktop Case Stream](http://mwelburn.github.com/Salesforce-Case-Streaming-API/images/mobile-case-stream.png)
+![Desktop Case Stream](http://mwelburn.github.com/Salesforce-Case-Streaming-API/images/desktop-case-stream.png)
 
 Installation Link
 -----------------
