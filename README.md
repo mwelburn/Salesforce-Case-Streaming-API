@@ -23,14 +23,14 @@ https://login.salesforce.com/packaging/installPackage.apexp?p0=04ti00000004Nyh
 2. Create the PushTopic
   * Reference the following snippet to run as Anonymous Apex:
 ```
-  PushTopic pushTopic = new PushTopic();
-  pushTopic.ApiVersion = 29.0;
-  pushTopic.Name = 'NewCases';
-  pushTopic.Description = 'New Cases';
-  pushTopic.Query = 'SELECT Id, Account_Name__c, Contact_Name__c, CaseNumber, Subject, Priority FROM Case';
-  pushTopic.NotifyForFields = 'All';
-  pushTopic.NotifyForOperationCreate = true;
-  insert pushTopic;
+PushTopic pushTopic = new PushTopic();
+pushTopic.ApiVersion = 29.0;
+pushTopic.Name = 'NewCases';
+pushTopic.Description = 'New Cases';
+pushTopic.Query = 'SELECT Id, Account_Name__c, Contact_Name__c, CaseNumber, Subject, Priority FROM Case';
+pushTopic.NotifyForFields = 'All';
+pushTopic.NotifyForOperationCreate = true;
+insert pushTopic;
 ```
 3. For Home Page Layout:
   * Follow the steps for [Adding the Home Page Component to your sidebar](http://help.bluemangolearning.com/m/salesforce/l/24429-adding-the-home-page-component-to-your-sidebar)
