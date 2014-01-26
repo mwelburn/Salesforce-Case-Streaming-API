@@ -23,7 +23,8 @@ https://login.salesforce.com/packaging/installPackage.apexp?p0=04ti00000004Nyh
 
 2. Create the PushTopic
   * Reference the following snippet to run as Anonymous Apex:
-   ```
+   
+```
   PushTopic pushTopic = new PushTopic();
   pushTopic.ApiVersion = 29.0;
   pushTopic.Name = 'NewCases';
