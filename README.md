@@ -13,18 +13,12 @@ https://login.salesforce.com/packaging/installPackage.apexp?p0=04ti00000004Nyh
 
 Setup Steps
 -----------
-- Ensure profile access is set up for the following:
- - Case Fields:
-   - Account_Name__c
-   - CaseNumber
-   - Contact_Name__c
-   - Priority
-   - Subject
- - Visualforce Page:
-   - NotificationFeed
- - Custom Tab:
-   - Case Stream
-- Create the PushTopic
+1 Ensure profile access is set up for the following:
+ - Case Fields: Account_Name__c, CaseNumber, Contact_Name__c, Priority, Subject
+ - Visualforce Page: NotificationFeed
+ - Custom Tab: Case Stream
+
+2 Create the PushTopic
  - Reference the following snippet to run as Anonymous Apex:
    ```
   PushTopic pushTopic = new PushTopic();
@@ -36,12 +30,14 @@ Setup Steps
   pushTopic.NotifyForOperationCreate = true;
   insert pushTopic;
 ```
-- For Home Page Layout:
+
+3 For Home Page Layout:
  - Follow the steps for [Adding the Home Page Component to your sidebar](http://help.bluemangolearning.com/m/salesforce/l/24429-adding-the-home-page-component-to-your-sidebar)
  - Choose the Case Stream (narrow left) component
    - If the component appears too tall for your liking, edit the HTML of the component to lessen the height of the iframe
  - Ensure you customize your UI to set "Show Custom Sidebar Components on All Pages" in order to view the component on pages besides the Home tab
-- For Salesforce1:
+ 
+4 For Salesforce1:
  - Ensure Visualforce Page is enabled for Mobile
  - Follow the steps for [Adding Visualforce Tabs to Mobile Configurations](http://www.salesforce.com/us/developer/docs/pages/Content/pages_mobile_configs.htm)
 
