@@ -1,0 +1,41 @@
+<apex:page showHeader="false" sidebar="false"  standardStylesheets="false" applyBodyTag="false" docType="html-5.0" title="Case Stream" >
+  <apex:variable var="isSidebar" value="{!$CurrentPage.parameters.sidebar == '1'}"/>
+	<head>
+    <apex:stylesheet value="{!URLFOR($Resource.NotificationFeed, 'css/pure-min.css')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.NotificationFeed, 'css/notification-feed.css')}"/>
+
+    <!-- For Streaming API usage -->
+    <apex:includeScript value="{!URLFOR($Resource.NotificationFeed, 'js/cometd.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.NotificationFeed, 'js/jquery.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.NotificationFeed, 'js/json2.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.NotificationFeed, 'js/jquery.cometd.js')}"/>
+
+    <apex:includeScript value="{!URLFOR($Resource.NotificationFeed, 'js/angular.min.js')}"/>
+    <!-- https://github.com/EricWVGG/AngularSlideables -->
+    <apex:includeScript value="{!URLFOR($Resource.NotificationFeed, 'js/angular-animate.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.NotificationFeed, 'js/notification-feed.js')}"/>
+  </head>
+  <body ng-app="NotificationFeedApp" class="{!IF(isSidebar, 'sidebar', '')}">
+    <div class="pure-g-r" ng-controller="FeedController" ng-init="init('{!$Api.Session_ID}')">
+        <div class="pure-u-1">
+         <div class="header" ng-show="{!NOT(isSidebar)}">Case Stream</div>
+          <!--<div class="pure-menu pure-menu-open pure-menu-horizontal">
+            <ul>
+              <li class="pure-menu-selected"><a href="#">Cases</a></li>
+              <li class="pure-menu-selected"><a href="#">Accounts</a></li>
+              <li><a href="#">Opportunities</a></li>
+            </ul>
+          </div>-->
+          <ul ng-repeat="data in feed" class="repeated-item">
+            <li class="feed-cell" ng-class="data.sobject.Priority">
+              <div class="feed-title">{{data.sobject.Subject}}</div>
+              <div class="feed-subtitle">{{data.sobject.Account_Name__c}}</div>
+
+              <div class="feed-subtitle">{{data.sobject.Contact_Name__c}}</div>
+              <div class="feed-subtitle">{{data.sobject.CaseNumber}}</div>
+            </li>
+          </ul>
+        </div>
+    </div>
+  </body>
+</apex:page>
