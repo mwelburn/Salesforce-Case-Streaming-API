@@ -34,6 +34,7 @@ pushTopic.NotifyForFields = 'All';
 pushTopic.NotifyForOperationCreate = true;
 insert pushTopic;
 ```
+
 3) For Home Page Layout:
   * Follow the steps for [Adding the Home Page Component to your sidebar](http://help.bluemangolearning.com/m/salesforce/l/24429-adding-the-home-page-component-to-your-sidebar)
   * Choose the Case Stream (narrow left) component
