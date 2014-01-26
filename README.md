@@ -26,19 +26,19 @@ Setup Steps
 -----------
 - Ensure profile access is set up for the following:
  - Case Fields:
-  - Account_Name__c
-  - CaseNumber
-  - Contact_Name__c
-  - Priority
-  - Subject
+   - Account_Name__c
+   - CaseNumber
+   - Contact_Name__c
+   - Priority
+   - Subject
  - Visualforce Page:
-  - NotificationFeed
+   - NotificationFeed
  - Custom Tab:
-  - Case Stream
+   - Case Stream
 - For Home Page Layout:
- - follow the steps for [Adding the Home Page Component to your sidebar](http://help.bluemangolearning.com/m/salesforce/l/24429-adding-the-home-page-component-to-your-sidebar)
+ - Follow the steps for [Adding the Home Page Component to your sidebar](http://help.bluemangolearning.com/m/salesforce/l/24429-adding-the-home-page-component-to-your-sidebar)
  - Choose the Case Stream (narrow left) component
-  - If the component appears too tall for your liking, edit the HTML of the component to lessen the height of the iframe
+   - If the component appears too tall for your liking, edit the HTML of the component to lessen the height of the iframe
  - Ensure you customize your UI to set "Show Custom Sidebar Components on All Pages" in order to view the component on pages besides the Home tab
 - For Salesforce1:
  - Ensure Visualforce Page is enabled for Mobile
