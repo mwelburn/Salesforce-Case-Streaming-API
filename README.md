@@ -4,19 +4,8 @@ The premise of this POC was to setup a Visualforce page on the sidebar and as a 
 
 There are plenty of inefficiences and lack of error handling in the CometD usage and AngularJS implementation, but it is stubbed out enough to show the possibilities.
 
-Create PushTopic
-----------------
-The following snippet of code can be run via anonymous apex.
-```
-  PushTopic pushTopic = new PushTopic();
-  pushTopic.ApiVersion = 29.0;
-  pushTopic.Name = 'NewCases';
-  pushTopic.Description = 'New Cases';
-  pushTopic.Query = 'SELECT Id, Account_Name__c, Contact_Name__c, CaseNumber, Subject, Priority FROM Case';
-  pushTopic.NotifyForFields = 'All';
-  pushTopic.NotifyForOperationCreate = true;
-  insert pushTopic;
-```
+![Mobile Case Stream](http://mwelburn.github.com/Salesforce-Case-Streaming-API/images/mobile-case-stream.png)
+![Desktop Case Stream](http://mwelburn.github.com/Salesforce-Case-Streaming-API/images/mobile-case-stream.png)
 
 Installation Link
 -----------------
@@ -35,6 +24,18 @@ Setup Steps
    - NotificationFeed
  - Custom Tab:
    - Case Stream
+- Create the PushTopic
+ - Reference the following snippet to run as Anonymous Apex:
+   ```
+  PushTopic pushTopic = new PushTopic();
+  pushTopic.ApiVersion = 29.0;
+  pushTopic.Name = 'NewCases';
+  pushTopic.Description = 'New Cases';
+  pushTopic.Query = 'SELECT Id, Account_Name__c, Contact_Name__c, CaseNumber, Subject, Priority FROM Case';
+  pushTopic.NotifyForFields = 'All';
+  pushTopic.NotifyForOperationCreate = true;
+  insert pushTopic;
+```
 - For Home Page Layout:
  - Follow the steps for [Adding the Home Page Component to your sidebar](http://help.bluemangolearning.com/m/salesforce/l/24429-adding-the-home-page-component-to-your-sidebar)
  - Choose the Case Stream (narrow left) component
